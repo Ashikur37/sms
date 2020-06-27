@@ -15,7 +15,7 @@ var mysql = require("mysql");
 // });
 const server = require("http").createServer(app);
 const io = require("socket.io").listen(server);
-const port = 3000;
+const port = process.env.PORT || 3000;
 var clients = [];
 io.sockets.on("connection", function(socket) {
     console.log("connected");
